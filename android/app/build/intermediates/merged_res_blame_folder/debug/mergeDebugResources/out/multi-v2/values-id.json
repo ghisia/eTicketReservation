@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.new_car_ticket.app-mergeDebugResources-117:/values-id/values-id.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\GhiSA\\.gradle\\caches\\8.10.2\\transforms\\5bfc81ab41533fc2d7ded35e9ed769fd\\transformed\\jetified-play-services-wallet-19.3.0\\res\\values-id\\values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "202,259",
+                        "endColumns": "56,73",
+                        "endOffsets": "258,332"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,116",
+                        "endColumns": "60,77",
+                        "endOffsets": "111,189"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\GhiSA\\.gradle\\caches\\8.10.2\\transforms\\9b3f97940f01c0b9667d5f8f37d74978\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,293",
+                        "endColumns": "58,46,131,108",
+                        "endOffsets": "109,156,288,397"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "194,253,300,432",
+                        "endColumns": "58,46,131,108",
+                        "endOffsets": "248,295,427,536"
+                    }
+                }
+            ]
+        }
+    ]
+}

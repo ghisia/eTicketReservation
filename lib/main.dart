@@ -1,5 +1,7 @@
+import 'package:car_ticket/controller/auth/auth_controller.dart';
+import 'package:car_ticket/core/bindings/report_binding.dart';
+import 'package:car_ticket/core/bindings/user_dashboard_binding.dart';
 import 'package:car_ticket/domain/repositories/user/firebase_user_repository.dart';
-import 'package:car_ticket/domain/repositories/user/user_repository.dart';
 import 'package:car_ticket/presentation/screens/auth/auth_screen.dart';
 import 'package:car_ticket/presentation/screens/car_all_details/car_available_more_details.dart';
 import 'package:car_ticket/presentation/screens/main_screen/dashboard/car/cars.dart';
@@ -15,13 +17,14 @@ import 'package:car_ticket/presentation/screens/setting_screens/edit_profile.dar
 import 'package:car_ticket/presentation/screens/setting_screens/my_payment.dart';
 import 'package:car_ticket/presentation/screens/setting_screens/my_tickets.dart';
 import 'package:car_ticket/presentation/screens/status_screen/success_payment_screen.dart';
+import 'package:car_ticket/presentation/screens/user/user_dashboard_profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -33,14 +36,18 @@ void main() async {
 
   Stripe.publishableKey = dotenv.env['STRIPE_TEST_PUBLISHABLE_KEY']!;
 
-  runApp(MyApp(
-    userRepository: FirebaseUserRepository(firebaseAuth: FirebaseAuth.instance),
-  ));
+  // Initialize repositories and controllers
+  Get.put<FirebaseUserRepository>(
+    FirebaseUserRepository(firebaseAuth: FirebaseAuth.instance),
+    permanent: true
+  );
+  Get.put(AuthController(), permanent: true);
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final UserRepository userRepository;
-  const MyApp({required this.userRepository, super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +73,19 @@ class MyApp extends StatelessWidget {
               //     return const OnboardingScreen();
               //   },
               // ),
+              getPages: [
+                GetPage(
+                  name: UserDashboardProfileScreen.routeName,
+                  page: () => const UserDashboardProfileScreen(),
+                  binding: UserDashboardBinding(),
+                ),
+                // ...other routes...
+                GetPage(
+                  name: DashboardReportScreen.routeName,
+                  page: () => const DashboardReportScreen(),
+                  binding: ReportBinding(),
+                ),
+              ],
               routes: {
                 OnboardingScreen.routeName: (context) =>
                     const OnboardingScreen(),

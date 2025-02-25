@@ -19,14 +19,14 @@ dependencies:
   firebase_messaging: ^15.0.3
   firebase_analytics: ^11.2.0
   equatable: ^2.0.5
-  get: ^4.6.6
-  shared_preferences: ^2.2.3
+  get: ^4.6.5
+  shared_preferences: ^2.2.2
   gap: ^3.0.1
   google_fonts: ^6.2.1
   image_picker: ^1.1.1
   uuid: ^4.4.0
   flutter_stripe: ^11.0.0
-  # qr_code_scanner: ^1.0.1
+  qr_code_scanner: ^1.0.1
   http: ^1.2.1
   flutter_dotenv: ^5.1.0
   fluttertoast: ^8.2.5
@@ -34,6 +34,7 @@ dependencies:
   screenshot: ^3.0.0
   file_saver: ^0.2.13
   flutter_svg: ^2.0.10+1
+  fl_chart: ^0.65.0
 
 dev_dependencies:
   flutter_test:

@@ -18,22 +18,23 @@ class UserItem extends StatelessWidget {
               title: Text(customer.name),
               subtitle: Text(customer.email),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('View Profile'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Change Role'),
-                  ),
-                ],
-              ),
-            )
+            // Padding(
+            //   padding: const EdgeInsets.only(bottom: 8.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.start,
+            //     children: [
+            //       ElevatedButton(
+            //         onPressed: () {
+            //           Get.toNamed(
+            //             UserDashboardProfileScreen.routeName,
+            //             arguments: customer,
+            //           );
+            //         },
+            //         child: const Text('View Profile'),
+            //       ),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),

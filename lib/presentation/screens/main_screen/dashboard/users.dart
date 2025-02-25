@@ -18,7 +18,7 @@ class UsersScreen extends StatelessWidget {
             snap: true,
             pinned: true,
             backgroundColor: Theme.of(context).primaryColor,
-            expandedHeight: 200,
+            expandedHeight: 160,
             foregroundColor: Colors.white,
             flexibleSpace: Container(
                 decoration: BoxDecoration(
@@ -31,16 +31,7 @@ class UsersScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                 ),
-                child: Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextButton.icon(
-                          onPressed: null,
-                          icon: const Icon(Icons.add, color: Colors.white),
-                          label: const Text('Add User',
-                              style: TextStyle(color: Colors.white)),
-                        ))))),
+            )),
         SliverList(
           delegate: SliverChildListDelegate(
             [

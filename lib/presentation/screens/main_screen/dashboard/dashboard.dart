@@ -7,6 +7,7 @@ import 'package:car_ticket/presentation/widgets/dashboard/main_card.dart';
 import 'package:car_ticket/presentation/widgets/dashboard/main_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:car_ticket/controller/auth/auth_controller.dart';
 
 class CarTicketDashboard extends StatelessWidget {
   static const String routeName = '/dashboard';
@@ -33,14 +34,45 @@ class CarTicketDashboard extends StatelessWidget {
               ),
               ListTile(
                 title: const Text('View Profile'),
+                leading: const Icon(Icons.person),
                 onTap: () {
                   Get.toNamed(UserProfileScreen.routeName);
                 },
               ),
               ListTile(
                 title: const Text('View Reports'),
+                leading: const Icon(Icons.bar_chart),
                 onTap: () {
                   Get.toNamed(DashboardReportScreen.routeName);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                title: const Text('Logout'),
+                leading: const Icon(Icons.logout),
+                textColor: Colors.red,
+                iconColor: Colors.red,
+                onTap: () {
+                  Get.defaultDialog(
+                    title: 'Logout',
+                    middleText: 'Are you sure you want to logout?',
+                    textConfirm: 'Yes',
+                    textCancel: 'No',
+                    confirmTextColor: Colors.white,
+                    onConfirm: () {
+                      Get.back(); // Close dialog first
+                      AuthController.to.logout().then((_) {
+                        // Handle successful logout
+                      }).catchError((error) {
+                        Get.snackbar(
+                          'Error',
+                          'Logout failed: $error',
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
+                      });
+                    },
+                    onCancel: () => Get.back(),
+                  );
                 },
               ),
             ],

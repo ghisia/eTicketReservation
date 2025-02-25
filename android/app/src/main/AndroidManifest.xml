@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Add these permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:label="new_car_ticket"
         android:name="${applicationName}"

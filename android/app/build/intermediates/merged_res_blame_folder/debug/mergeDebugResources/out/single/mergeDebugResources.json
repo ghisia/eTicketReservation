@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.new_car_ticket.app-debug-119:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.new_car_ticket.app-main-121:/mipmap-hdpi/ic_launcher.png"
+    }
+]
